@@ -1,0 +1,6 @@
+<view>
+  <view class='order-img'>
+    <image src='../../images/order/1.jpg'></image>
+  </view>
+  <view class='order-text'>暂无可处理订单</view>
+</view>

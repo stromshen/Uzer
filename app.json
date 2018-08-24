@@ -1,0 +1,42 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/content/content",
+    "pages/logs/logs",
+    "pages/order/order",
+    "pages/user/user",
+    "pages/search/search",
+    "pages/switchcity/switchcity"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#FF7F00",
+    "navigationBarTitleText": "优住",
+    "navigationBarTextStyle":"#fff"
+  },
+  "tabBar": {
+    "color": "#515151",
+    "selectedColor": "#FF7F00",
+    "borderStyle": "white",
+    "list": [
+      {
+        "selectedIconPath": "images/nav/home.png",
+        "iconPath": "images/nav/home1.png",
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "selectedIconPath": "images/nav/order.png",
+        "iconPath": "images/nav/order1.png",
+        "pagePath": "pages/order/order",
+        "text": "订单"
+      },
+      {
+        "selectedIconPath": "images/nav/user.png",
+        "iconPath": "images/nav/user1.png",
+        "pagePath": "pages/user/user",
+        "text": "我的"
+      }
+    ]
+  }
+}

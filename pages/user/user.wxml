@@ -1,0 +1,30 @@
+<view>
+  <view class='user-top'>
+    <view class='user-message'>
+      <image src='../../images/nav/user-tx.png'></image>
+      <text>Librarian</text>
+    </view>
+    <view class='user-center'>
+      <navigator>
+        <view class='trading-record'>交易记录</view>
+      </navigator>
+      <view class='user-money'>1000</view>
+      <view class='user-money-text'>账户余额</view>
+      <view class='uzer-app'>下载“优住”APP可提现</view>
+    </view>
+  </view>
+  <button class='recharge'>立即充值</button>
+  <view class='protocol'>点击立即充值，即表示已经阅读同意《充值协议》</view>
+  <view class='coupon'>
+    <view class='coupon-1'>
+      <text>我的优惠卷</text>
+      <navigator>
+        <image class='coupon-ioc' src='../../images/nav/jia.png'></image>
+      </navigator>
+    </view>
+  </view>
+  <view class='service'>
+    <image src='../../images/nav/service.png'></image>
+    <view>24小时客服联系电话：400-111-3020</view>
+  </view>
+</view>

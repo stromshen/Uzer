@@ -1,0 +1,113 @@
+/* pages/user/user.wxss */
+page{
+  background:	#F5F5F5;
+  font-family: "微软雅黑";
+}
+text,view{
+  font-size: 32rpx;
+}
+.user-top{
+  width: 100%;
+  height: 250rpx;
+  background: -webkit-linear-gradient(left top,#FF7F00,#FFA54F);
+  background: -o-linear-gradient(bottom right,#FF7F00,#FFA54F);
+  background: -moz-linear-gradient(bottom right,#FF7F00,#FFA54F);
+  background: linear-gradient(to bottom right,#FF7F00,#FFA54F);
+  border: 1rpx;
+  border-radius: 0 0 10% 10%;
+}
+.user-message{
+  padding: 40rpx 0 0 30rpx;
+  display: flex;
+  align-items: center;
+}
+.user-message text{
+  color: #fff;
+}
+.user-message image{
+  width: 100rpx;
+  height: 100rpx;
+  background: #F5F5F5;
+  border-radius: 50%;
+}
+.user-message text{
+  padding-left: 10rpx;
+  font-size: 38rpx;
+}
+.user-center{
+  width: 700rpx;
+  height: 320rpx;
+  background: #fff url(http://pic.58pic.com/58pic/13/44/47/67g58PICzvV_1024.jpg)
+  round;
+  margin: 0 auto;
+  margin-top: 40rpx;
+  border-radius: 20rpx;
+}
+.user-money,.trading-record,.uzer-app{
+  color: #FF7F00;
+}
+.trading-record{
+  text-align: right;
+  padding: 15rpx 20rpx 0 0;
+}
+.user-money{
+  font-size: 65rpx;
+  text-align: center;
+  padding-bottom: 10rpx;
+  font-weight: 600;
+}
+.user-money-text,.uzer-app{
+  text-align: center;
+}
+.uzer-app{
+  padding-top: 36rpx;
+}
+.recharge{
+  width: 700rpx;
+  background: -webkit-linear-gradient(left,#FF7F00,#FFA54F);
+  background: -o-linear-gradient(right,#FF7F00,#FFA54F);
+  background: -moz-linear-gradient(right,#FF7F00,#FFA54F);
+  background: linear-gradient(to right,#FF7F00,#FFA54F); 
+  color: #fff;
+  border-radius: 10rpx;
+  margin-top: 300rpx; 
+  border: 1rpx solid #F5F5F5;
+}
+.protocol{
+  font-size: 26rpx;
+  color: #8a8a8a;
+  margin: 10rpx 0 10rpx 27rpx;
+}
+.coupon{
+  width: 100%;
+  margin: 0 auto;
+  background: #fff;
+}
+.coupon-1{
+  width: 700rpx;
+  height: 80rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+}
+.coupon-ioc{
+  width: 40rpx;
+  height: 40rpx;
+  margin: 6rpx 20rpx 0 0;
+}
+.service{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 80rpx;
+}
+.service image{
+  width: 40rpx;
+  height: 40rpx;
+  margin-right:10rpx; 
+}
+.service view{
+  font-size: 26rpx;
+  color: #8a8a8a;
+}
