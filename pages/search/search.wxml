@@ -1,2 +1,45 @@
 <!--pages/search/search.wxml-->
-<text>pages/search/search.wxml</text>
+<view class='search'>
+<view class='search-img'>
+  <image src='../../images/nav/1.png'></image>
+</view>
+<input class='search-input' type="text"  confirm-type="search" placeholder='输入酒店名称搜索'>
+</input>
+<view class='search-quxiao'>取消</view>
+</view>
+<view class='jiudian'>
+    <image class='jiudian-image' src='../../images/index/4.jpg'></image>
+    <view class='jianjie'>
+      <view>
+        <view class='jiudian-telte'>莱佛士酒店</view>
+        <view class='xingxing' wx:for="{{xingxing}}"wx:key="imgUrlsId">
+          <image src='{{item}}'></image>
+        </view>
+      </view>
+      <view class='jiuli'>距您3900km</view>
+      <view class='jiudian-dingwei'>
+        <icon class='dingwei-tubiao'>
+          <image src='../../images/nav/location_1.png'></image>
+        </icon>
+      <text>阿联酋迪拜</text>
+      </view>
+    </view>
+  </view>
+  <view class='jiudian'>
+    <image class='jiudian-image' src='../../images/index/4.jpg'></image>
+    <view class='jianjie'>
+      <view>
+        <view class='jiudian-telte'>莱佛士酒店</view>
+        <view class='xingxing' wx:for="{{xingxing}}"wx:key="imgUrlsId">
+          <image src='{{item}}'></image>
+        </view>
+      </view>
+      <view class='jiuli'>距您3900km</view>
+      <view class='jiudian-dingwei'>
+        <icon class='dingwei-tubiao'>
+          <image src='../../images/nav/location_1.png'></image>
+        </icon>
+      <text>阿联酋迪拜</text>
+      </view>
+    </view>
+  </view>

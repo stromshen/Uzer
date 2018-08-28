@@ -5,7 +5,13 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    xingxing: [
+      '../../images/nav/xing.png',
+      '../../images/nav/xing.png',
+      '../../images/nav/xing.png',
+      '../../images/nav/xing.png',
+      '../../images/nav/xing.png'
+    ]
   },
 
   /**
