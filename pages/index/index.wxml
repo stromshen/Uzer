@@ -21,7 +21,7 @@
         <text>迪拜</text>
       </view>
     </navigator>
-    <navigator url='../search/search'>
+    <navigator url='../search/search' open-type="redirect">
       <view class='search'>
         <icon class='search-tubiao'>
           <image src='../../images/nav/1.png'></image>
@@ -30,21 +30,21 @@
       </view>
     </navigator>
   </view>
-  <view class='jiudian'>
-    <image class='jiudian-image' src='../../images/index/1.jpg'></image>
+  <view class='jiudian' wx:for-items="{{hotel}}" wx:key="hotel">
+    <image class='jiudian-image' src='{{item.hotel_img}}'></image>
     <view class='jianjie'>
       <view>
-        <view class='jiudian-telte'>迪拜水下酒店</view>
+        <view class='jiudian-telte'>{{item.hotel_name}}</view>
         <view class='xingxing' wx:for="{{xingxing}}"wx:key="imgUrlsId">
           <image src='{{item}}'></image>
         </view>
       </view>
-      <view class='jiuli'>距您3900km</view>
+      <view class='jiuli'>距您{{item.hotel_distance}}km</view>
       <view class='jiudian-dingwei'>
         <icon class='dingwei-tubiao'>
           <image src='../../images/nav/location_1.png'></image>
         </icon>
-        <text>阿联酋迪拜</text>
+        <text>{{item.hotel_positioning}}</text>
       </view>
     </view>
   </view>
