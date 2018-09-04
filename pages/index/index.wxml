@@ -1,4 +1,3 @@
-<!--index.wxml-->
 <view>
   <swiper indicator-color="{{a}}"
           indicator-active-color="{{active}}"
