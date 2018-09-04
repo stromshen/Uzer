@@ -21,7 +21,7 @@
         <text>迪拜</text>
       </view>
     </navigator>
-    <navigator url='../search/search' open-type="redirect">
+    <navigator url='../search/search' open-type="redirect" >
       <view class='search'>
         <icon class='search-tubiao'>
           <image src='../../images/nav/1.png'></image>
@@ -30,7 +30,7 @@
       </view>
     </navigator>
   </view>
-  <view class='jiudian' wx:for-items="{{hotel}}" wx:key="hotel">
+  <view class='jiudian' wx:for-items="{{hotel}}" wx:key="hotel" catchtap="onPostTap">
     <image class='jiudian-image' src='{{item.hotel_img}}'></image>
     <view class='jianjie'>
       <view>

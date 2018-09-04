@@ -6,7 +6,8 @@
     "pages/order/order",
     "pages/user/user",
     "pages/search/search",
-    "pages/switchcity/switchcity"
+    "pages/switchcity/switchcity",
+    "pages/products/products"
   ],
   "window":{
     "backgroundTextStyle":"light",

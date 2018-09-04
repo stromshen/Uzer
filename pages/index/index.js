@@ -44,12 +44,17 @@ Page({
         that.setData({
           hotel: hotel
         })
-        console.log(hotel);
       },
       fail: function (error) {
-        // fail
         console.log(error)
       }
+    })
+  },
+  onPostTap: function (event) {  //点击输出outer view bindtap
+    var postId = event.currentTarget.dataset.postid;
+    // console.log(postId);
+    wx.navigateTo({
+      url: "../products/products?id=" + postId
     })
   },
 })

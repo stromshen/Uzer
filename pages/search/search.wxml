@@ -5,7 +5,7 @@
 </view>
 <input class='search-input' type="text"  confirm-type="search" placeholder='输入酒店名称搜索'>
 </input>
-<view class='search-quxiao'>取消</view>
+  <view class='search-quxiao' catchtap="onPostTap">取消</view>
 </view>
 <view class='jiudian'>
     <image class='jiudian-image' src='../../images/index/4.jpg'></image>
