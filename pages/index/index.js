@@ -5,9 +5,7 @@ const app = getApp()
 Page({
   data: {
     imgUrls: [
-      '../../images/lunbo/1.jpg',
-      '../../images/lunbo/2.jpg',
-      '../../images/lunbo/3.jpg',
+
     ],
     indicatorDots: true, //是否显示面板指示点
     autoplay: true, //是否自动切换
@@ -28,8 +26,29 @@ Page({
     ]
   },
   onLoad: function () {
+    this.lunbo("http://127.0.0.1:81/applet/Uzer/Uzer/data/index.php?hotel_type=1");
     this.hotel("http://127.0.0.1:81/applet/Uzer/Uzer/data/index.php?hotel_type=2");
     // console.log(111);
+  },
+  lunbo:function(url){
+    var that=this;
+    wx.request({
+      url: url,
+      method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
+      header: {
+        "Content-Type": "json"
+      },
+      success: function (res) {
+        var lunbo=res.data;
+        that.setData({
+          lunbo: lunbo
+        })
+        // console.log(lunbo);
+      },
+      fail: function (error) {
+        console.log(error)
+      }
+    })
   },
   hotel:function(url){
     var that=this;
@@ -44,6 +63,7 @@ Page({
         that.setData({
           hotel: hotel
         })
+        // console.log(hotel);
       },
       fail: function (error) {
         console.log(error)
@@ -52,7 +72,7 @@ Page({
   },
   onPostTap: function (event) {  //点击输出outer view bindtap
     var postId = event.currentTarget.dataset.postid;
-    // console.log(postId);
+     console.log(postId);
     wx.navigateTo({
       url: "../products/products?id=" + postId
     })

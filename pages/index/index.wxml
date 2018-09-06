@@ -7,8 +7,8 @@
           vertical="{{isVertical}}"
           duration="{{duration}}"
           circular='false'>
-    <swiper-item wx:for="{{imgUrls}}"wx:key="imgUrlsId">
-      <image src="{{item}}" />
+    <swiper-item wx:for="{{lunbo}}"wx:key="lunboId">
+      <image src="{{item.hotle_lubbo}}" />
     </swiper-item>
   </swiper>
   <view class='page-center'>
@@ -29,7 +29,7 @@
       </view>
     </navigator>
   </view>
-  <view class='jiudian' wx:for-items="{{hotel}}" wx:key="hotel" catchtap="onPostTap">
+  <view class='jiudian' wx:for-items="{{hotel}}" wx:key="hotel" catchtap="onPostTap" data-postId="{{item.sid}}">
     <image class='jiudian-image' src='{{item.hotel_img}}'></image>
     <view class='jianjie'>
       <view>
@@ -44,42 +44,6 @@
           <image src='../../images/nav/location_1.png'></image>
         </icon>
         <text>{{item.hotel_positioning}}</text>
-      </view>
-    </view>
-  </view>
-  <view class='jiudian'>
-    <image class='jiudian-image' src='../../images/index/3.jpg'></image>
-    <view class='jianjie'>
-      <view>
-        <view class='jiudian-telte'>迪拜喜来登</view>
-        <view class='xingxing' wx:for="{{xingxing}}"wx:key="imgUrlsId">
-          <image src='{{item}}'></image>
-        </view>
-      </view>
-      <view class='jiuli'>距您3900km</view>
-      <view class='jiudian-dingwei'>
-        <icon class='dingwei-tubiao'>
-          <image src='../../images/nav/location_1.png'></image>
-        </icon>
-       <text>阿联酋迪拜</text>
-      </view>
-    </view>
-  </view>
-  <view class='jiudian'>
-    <image class='jiudian-image' src='../../images/index/4.jpg'></image>
-    <view class='jianjie'>
-      <view>
-        <view class='jiudian-telte'>莱佛士酒店</view>
-        <view class='xingxing' wx:for="{{xingxing}}"wx:key="imgUrlsId">
-          <image src='{{item}}'></image>
-        </view>
-      </view>
-      <view class='jiuli'>距您3900km</view>
-      <view class='jiudian-dingwei'>
-        <icon class='dingwei-tubiao'>
-          <image src='../../images/nav/location_1.png'></image>
-        </icon>
-      <text>阿联酋迪拜</text>
       </view>
     </view>
   </view>

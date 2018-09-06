@@ -16,7 +16,8 @@ Page({
     duration: 1000, //  滑动动画时长1s
     a: '#FFEFD5',
     active: '#FF8C00',
-    
+    showModal: false,
+
     xingxing: [
       '../../images/nav/xing.png',
       '../../images/nav/xing.png',
@@ -25,60 +26,85 @@ Page({
       '../../images/nav/xing.png'
     ]
   },
-
+  onLoad: function () {
+  },
   /**
-   * 生命周期函数--监听页面加载
+   * 弹窗
    */
-  onLoad: function (options) {
-  
+  showDialogBtn: function () {
+    this.setData({
+      showModal: true
+    })
+  },
+  calling: function () {
+    wx.makePhoneCall({
+      phoneNumber: '12345678900', //此号码并非真实电话号码，仅用于测试
+      success: function () {
+        console.log("拨打电话成功！")
+      },
+      fail: function () {
+        console.log("拨打电话失败！")
+      }
+    })
+  },
+  onLoad: function (option) {
+    console.log(222);
+    var that=this;
+    var postId = option.id;
+    this.data.currentPostId = postId;
+    this.products("http://127.0.0.1:81/applet/Uzer/Uzer/data/products_1.php?sid="+postId);
+    console.log(postId);
+  },
+  products:function(url){
+    var that=this;
+    wx.request({
+      url: url,
+      method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
+      header: {
+        "Content-Type": "json"
+      },
+      success: function (res) {
+        // var hl_list=res.data;
+        // var img_data=(hl_list[0].data_img);
+        // var strs= new Array(); //定义一数组
+        // strs=img_data.split("~~"); //字符分割
+        // console.log(strs);
+        // that.setData({
+        //   hl_list:hl_list,
+        //   strs:strs
+        // })
+        console.log(res);
+      },
+      fail: function (error) {
+        // fail
+        console.log(error)
+      }
+    })
+  },
+  /**
+   * 弹出框蒙层截断touchmove事件
+   */
+  preventTouchMove: function () {
+  },
+  /**
+   * 隐藏模态对话框
+   */
+  hideModal: function () {
+    this.setData({
+      showModal: false
+    });
+  },
+  /**
+   * 对话框取消按钮点击事件
+   */
+  onCancel: function () {
+    this.hideModal();
+  },
+  /**
+   * 对话框确认按钮点击事件
+   */
+  onConfirm: function () {
+    this.hideModal();
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-  
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-  
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-  
-  }
 })

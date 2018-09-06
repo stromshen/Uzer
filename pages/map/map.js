@@ -63,7 +63,7 @@ Page({
             longitude: res.longitude,
             width: 50,
             height: 50,
-            iconPath: "/assests/imgs/my.png",
+            iconPath: "../../images/nav/location_2.png",
             title: "哪里"
 
           }],
