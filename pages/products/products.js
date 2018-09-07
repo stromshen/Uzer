@@ -48,11 +48,11 @@ Page({
     })
   },
   onLoad: function (option) {
-    console.log(222);
     var that=this;
     var postId = option.id;
     this.data.currentPostId = postId;
     this.products("http://127.0.0.1:81/applet/Uzer/Uzer/data/products_1.php?sid="+postId);
+    this.room("http://127.0.0.1:81/applet/Uzer/Uzer/data/products_2.php?sid="+postId);
     console.log(postId);
   },
   products:function(url){
@@ -64,19 +64,39 @@ Page({
         "Content-Type": "json"
       },
       success: function (res) {
-        // var hl_list=res.data;
-        // var img_data=(hl_list[0].data_img);
-        // var strs= new Array(); //定义一数组
-        // strs=img_data.split("~~"); //字符分割
-        // console.log(strs);
-        // that.setData({
-        //   hl_list:hl_list,
-        //   strs:strs
-        // })
+        var products=res.data;
+        var lunbo=(products[0].hotle_lubbo);
+        var strs= new Array(); //定义一数组
+        strs=lunbo.split("^"); //字符分割
+        console.log(strs);
+        that.setData({
+          products:products,
+          strs:strs
+        })
         console.log(res);
       },
       fail: function (error) {
         // fail
+        console.log(error)
+      }
+    })
+  },
+  room:function(url){
+    var that=this;
+    wx.request({
+      url: url,
+      method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
+      header: {
+        "Content-Type": "json"
+      },
+      success: function (res) {
+        var room=res.data;
+        that.setData({
+          room: room
+        })
+        console.log(room);
+      },
+      fail: function (error) {
         console.log(error)
       }
     })

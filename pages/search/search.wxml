@@ -3,8 +3,10 @@
 <view class='search-img'>
   <image src='../../images/nav/1.png'></image>
 </view>
-<input class='search-input' type="text"  confirm-type="search" placeholder='输入酒店名称搜索'>
-</input>
+<form bindsubmit="formSubmit" bindreset="formReset">
+  <input class='search-input' type="text"  confirm-type="search" placeholder='输入酒店名称搜索'>
+  </input>
+</form>
   <view class='search-quxiao' catchtap="onPostTap">取消</view>
 </view>
 <view class='jiudian'>

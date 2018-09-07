@@ -7,63 +7,35 @@
           vertical="{{isVertical}}"
           duration="{{duration}}"
           circular='false'>
-    <swiper-item wx:for="{{imgUrls}}"wx:key="imgUrlsId">
+    <swiper-item wx:for="{{strs}}"wx:key="strsId">
       <image src="{{item}}" />
     </swiper-item>
   </swiper>
-  <view class='hotel-map'>
-    <navigator url='../map/map'>
-      <view class='dingwei'>
-        <icon class='dingwei-tubiao'>
-          <image src='../../images/nav/location_2.png'></image>
-        </icon>
-        <text>迪拜水下酒店</text>
-      </view>
-    </navigator>
-    <image class='service' bindtap="showDialogBtn" src='../../images/nav/service.png'></image>
-  </view>
-  <view class='jiuli'>距您3700km</view>
-  <view class='jiudian'>
-    <image class='jiudian-image' src='../../images/index/3.jpg'></image>
-    <view class='jianjie'>
-      <view class='room-message'>
-        <view class='room-telte'>海底透明双人床</view>
-        <view class='room-number'>房间编号：308</view>
-        <view class='room-initial'>起住价：12888元</view>
-        <view class='room-initial'>需充值500元可入住</view>
-      </view>
-      <view class='room-s'>
-        <view class='room-money'>888元/小时</view>
-        <view class='reservation'>预订</view>
-      </view>
+  <view class='hotel-map-s' wx:for="{{products}}" wx:key="productsId">
+    <view class='hotel-map'>
+      <navigator url='../map/map'>
+        <view class='dingwei'>
+          <icon class='dingwei-tubiao'>
+            <image src='../../images/nav/location_2.png'></image>
+          </icon>
+          <text>{{item.hotel_name}}</text>
+        </view>
+      </navigator>
+      <image class='service' bindtap="showDialogBtn" src='../../images/nav/service.png'></image>
     </view>
+    <view class='jiuli'>距您{{item.hotel_distance}}km</view>
   </view>
-  <view class='jiudian'>
-    <image class='jiudian-image' src='../../images/index/3.jpg'></image>
+  <view class='jiudian' wx:for="{{room}}" wx:key="roomId">
+    <image class='jiudian-image' src='{{item.room_img}}'></image>
     <view class='jianjie'>
       <view class='room-message'>
-        <view class='room-telte'>海底透明双人床</view>
-        <view class='room-number'>房间编号：308</view>
-        <view class='room-initial'>起住价：12888元</view>
-        <view class='room-initial'>需充值500元可入住</view>
+        <view class='room-telte'>{{item.room_name}}</view>
+        <view class='room-number'>房间编号：{{item.room_number}}</view>
+        <view class='room-initial'>起住价：{{item.room_initial}}元</view>
+        <view class='room-initial'>需充值{{item.room_recharge}}元可入住</view>
       </view>
       <view class='room-s'>
-        <view class='room-money'>888元/小时</view>
-        <view class='reservation'>预订</view>
-      </view>
-    </view>
-  </view>
-  <view class='jiudian'>
-    <image class='jiudian-image' src='../../images/index/3.jpg'></image>
-    <view class='jianjie'>
-      <view class='room-message'>
-        <view class='room-telte'>海底透明双人床</view>
-        <view class='room-number'>房间编号：308</view>
-        <view class='room-initial'>起住价：12888元</view>
-        <view class='room-initial'>需充值880元可入住</view>
-      </view>
-      <view class='room-s'>
-        <view class='room-money'>888元/小时</view>
+        <view class='room-money'>{{item.room_money}}元/小时</view>
         <view class='reservation'>预订</view>
       </view>
     </view>
@@ -78,8 +50,8 @@
   </view>
   <view class="modal-title">联系商户咨询详情</view>
   <view class="modal-content">
-    <view class="modal-phone">
-      17307499159
+    <view class="modal-phone" wx:for="{{products}}"wx:key="productsId">
+      {{item.hotel_phone}}
     </view>
   </view>
   <view class="modal-footer">
