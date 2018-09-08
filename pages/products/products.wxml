@@ -7,8 +7,54 @@
           vertical="{{isVertical}}"
           duration="{{duration}}"
           circular='false'>
-    <swiper-item wx:for="{{imgUrls}}"wx:key="imgUrlsId">
+    <swiper-item wx:for="{{strs}}"wx:key="strsId">
       <image src="{{item}}" />
     </swiper-item>
   </swiper>
+  <view class='hotel-map-s' wx:for="{{products}}" wx:key="productsId">
+    <view class='hotel-map'>
+      <navigator url='../map/map'>
+        <view class='dingwei'>
+          <icon class='dingwei-tubiao'>
+            <image src='../../images/nav/location_2.png'></image>
+          </icon>
+          <text>{{item.hotel_name}}</text>
+        </view>
+      </navigator>
+      <image class='service' bindtap="showDialogBtn" src='../../images/nav/service.png'></image>
+    </view>
+    <view class='jiuli'>距您{{item.hotel_distance}}km</view>
+  </view>
+  <view class='jiudian' wx:for="{{room}}" wx:key="roomId">
+    <image class='jiudian-image' src='{{item.room_img}}'></image>
+    <view class='jianjie'>
+      <view class='room-message'>
+        <view class='room-telte'>{{item.room_name}}</view>
+        <view class='room-number'>房间编号：{{item.room_number}}</view>
+        <view class='room-initial'>起住价：{{item.room_initial}}元</view>
+        <view class='room-initial'>需充值{{item.room_recharge}}元可入住</view>
+      </view>
+      <view class='room-s'>
+        <view class='room-money'>{{item.room_money}}元/小时</view>
+        <view class='reservation'>预订</view>
+      </view>
+    </view>
+  </view>
+</view>
+<!--弹窗-->
+<view class="modal-mask" bindtap="hideModal" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+<view class="modal-dialog" wx:if="{{showModal}}">
+  <view class='modal-img'>
+    <image class='img-phong' src='../../images/nav/phone96.png'></image>
+    <image class='img-x'bindtap="onCancel" data-status="cancel" src='../../images/nav/x.png'></image>
+  </view>
+  <view class="modal-title">联系商户咨询详情</view>
+  <view class="modal-content">
+    <view class="modal-phone" wx:for="{{products}}"wx:key="productsId">
+      {{item.hotel_phone}}
+    </view>
+  </view>
+  <view class="modal-footer">
+    <view class="btn-confirm" bindtap="calling" data-status="confirm">确定</view>
+  </view>
 </view>

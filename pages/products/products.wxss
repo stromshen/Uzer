@@ -15,3 +15,155 @@ swiper-item image{
   width: 100%;
   height: 100%;
 }
+.dingwei{
+  width: 640rpx;
+  height: 72rpx;
+  font-size: 30rpx;
+  display: flex;
+  align-items: center;
+}
+.dingwei-tubiao image,.search-tubiao image{
+  width: 40rpx;
+  height: 40rpx;
+  margin: 0 0 5rpx 10rpx;
+}
+.service{
+  width: 40rpx;
+  height: 40rpx;
+  margin: 0 40rpx 5rpx 10rpx;
+}
+.hotel-map{
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.jiuli{
+  background: #fff;
+  padding: 0rpx 0rpx 60rpx 20rpx;
+  margin-bottom: 20rpx;
+}
+.jiudian{
+  height: 180rpx;
+  background: #fff;
+  display: flex;
+  margin: 0 auto;
+  padding: 15rpx 15rpx;
+  margin-bottom: 10rpx;
+}
+.jiuli,.room-telte,.room-number,.room-money{
+  font-size: 30rpx;
+}
+.jianjie{
+  display: flex;
+  margin-left: 20rpx;
+}
+.room-message view{
+  margin: 6rpx 0;
+}
+.jiudian-image{
+  width: 180rpx;
+  height: 180rpx;
+  border-radius: 10rpx;
+}
+.room-initial{
+  color: #515151;
+  font-size: 26rpx;
+}
+.room-s{
+}
+.room-money{
+  width: 280rpx;
+  color: #FF7F00;
+  margin-top:70rpx; 
+  text-align: end;
+}
+.reservation{
+  width: 120rpx;
+  height: 55rpx;
+  background: -webkit-linear-gradient(left,#FF7F00,#FFA54F);
+  background: -o-linear-gradient(right,#FF7F00,#FFA54F);
+  background: -moz-linear-gradient(right,#FF7F00,#FFA54F);
+  background: linear-gradient(to right,#FF7F00,#FFA54F); 
+  font-size: 26rpx;
+  color: #fff;
+  border: 1rpx solid #F5F5F5;
+  border-radius: 8rpx;
+  text-align: center;
+  line-height: 50rpx;
+  margin: 15rpx 0rpx 0rpx 150rpx;
+}
+.modal-mask {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.5;
+  overflow: hidden;
+  z-index: 9000;
+  color: #fff;
+}
+
+.modal-dialog {
+  width: 560rpx;
+  overflow: hidden;
+  position: fixed;
+  top: 50%;
+  left: 0;
+  z-index: 9999;
+  background: #f9f9f9;
+  margin: -250rpx 95rpx;
+  border-radius: 10rpx;
+}
+.modal-img{
+  height: 220rpx;
+  display: flex;
+  background: -webkit-linear-gradient(left,#FF7F00,#FFA54F);
+  background: -o-linear-gradient(right,#FF7F00,#FFA54F);
+  background: -moz-linear-gradient(right,#FF7F00,#FFA54F);
+  background: linear-gradient(to right,#FF7F00,#FFA54F); 
+}
+.img-x{
+  width: 30rpx;
+  height: 30rpx;
+  padding: 15rpx;
+}
+.img-phong{
+  width: 160rpx;
+  height: 140rpx;
+  padding: 40rpx 150rpx 0 200rpx;
+}
+.modal-title {
+  padding-top: 50rpx;
+  font-size: 32rpx;
+  color: #030303;
+  text-align: center;
+}
+
+.modal-content {
+  padding: 50rpx 32rpx;
+}
+
+.modal-phone{
+  width: 100%;
+  text-align: center;
+}
+.modal-footer {
+  height: 120rpx;
+}
+.btn-confirm {
+  width: 150rpx;
+  height: 60rpx;
+  color: #fff;
+  border: 1rpx solid #F5F5F5;
+  background: -webkit-linear-gradient(left,#FF7F00,#FFA54F);
+  background: -o-linear-gradient(right,#FF7F00,#FFA54F);
+  background: -moz-linear-gradient(right,#FF7F00,#FFA54F);
+  background: linear-gradient(to right,#FF7F00,#FFA54F); 
+  text-align: center;
+  line-height: 60rpx;
+  border-radius: 8rpx;
+  margin: 0 auto;
+}

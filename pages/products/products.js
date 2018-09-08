@@ -16,7 +16,8 @@ Page({
     duration: 1000, //  滑动动画时长1s
     a: '#FFEFD5',
     active: '#FF8C00',
-    
+    showModal: false,
+
     xingxing: [
       '../../images/nav/xing.png',
       '../../images/nav/xing.png',
@@ -25,60 +26,106 @@ Page({
       '../../images/nav/xing.png'
     ]
   },
-
+  onLoad: function () {
+  },
   /**
-   * 生命周期函数--监听页面加载
+   * 弹窗
    */
-  onLoad: function (options) {
-  
+  showDialogBtn: function () {
+    this.setData({
+      showModal: true
+    })
+  },
+  calling: function () {
+    wx.makePhoneCall({
+      phoneNumber: '12345678900', //此号码并非真实电话号码，仅用于测试
+      success: function () {
+        console.log("拨打电话成功！")
+      },
+      fail: function () {
+        console.log("拨打电话失败！")
+      }
+    })
+  },
+  onLoad: function (option) {
+    var that=this;
+    var postId = option.id;
+    this.data.currentPostId = postId;
+    this.products("http://127.0.0.1:81/applet/Uzer/Uzer/data/products_1.php?sid="+postId);
+    this.room("http://127.0.0.1:81/applet/Uzer/Uzer/data/products_2.php?sid="+postId);
+    console.log(postId);
+  },
+  products:function(url){
+    var that=this;
+    wx.request({
+      url: url,
+      method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
+      header: {
+        "Content-Type": "json"
+      },
+      success: function (res) {
+        var products=res.data;
+        var lunbo=(products[0].hotle_lubbo);
+        var strs= new Array(); //定义一数组
+        strs=lunbo.split("^"); //字符分割
+        console.log(strs);
+        that.setData({
+          products:products,
+          strs:strs
+        })
+        console.log(res);
+      },
+      fail: function (error) {
+        // fail
+        console.log(error)
+      }
+    })
   },
 
+  room:function(url){
+    var that=this;
+    wx.request({
+      url: url,
+      method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
+      header: {
+        "Content-Type": "json"
+      },
+      success: function (res) {
+        var room=res.data;
+        that.setData({
+          room: room
+        })
+        console.log(room);
+      },
+      fail: function (error) {
+        console.log(error)
+      }
+    })
+  },
   /**
-   * 生命周期函数--监听页面初次渲染完成
+   * 弹出框蒙层截断touchmove事件
    */
-  onReady: function () {
-  
+  preventTouchMove: function () {
+  },
+  /**
+   * 隐藏模态对话框
+   */
+  hideModal: function () {
+    this.setData({
+      showModal: false
+    });
+  },
+  /**
+   * 对话框取消按钮点击事件
+   */
+  onCancel: function () {
+    this.hideModal();
+  },
+  /**
+   * 对话框确认按钮点击事件
+   */
+  onConfirm: function () {
+    this.hideModal();
   },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-  
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-  
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-  
-  }
 })
