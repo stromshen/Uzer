@@ -20,14 +20,12 @@
         <text>迪拜</text>
       </view>
     </navigator>
-    <navigator url='../search/search' open-type="redirect" >
-      <view class='search'>
+      <view class='search' bindtap="suo">
         <icon class='search-tubiao'>
           <image src='../../images/nav/1.png'></image>
         </icon>
         <text>搜索酒店名称</text>
       </view>
-    </navigator>
   </view>
   <view class='jiudian' wx:for-items="{{hotel}}" wx:key="hotel" catchtap="onPostTap" data-postId="{{item.sid}}">
     <image class='jiudian-image' src='{{item.hotel_img}}'></image>

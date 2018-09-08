@@ -77,4 +77,9 @@ Page({
       url: "../products/products?id=" + postId
     })
   },
+  suo: function (e) {
+    wx.navigateTo({
+      url: '../search/search',
+    })
+  },
 })

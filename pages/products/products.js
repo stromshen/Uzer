@@ -81,6 +81,7 @@ Page({
       }
     })
   },
+
   room:function(url){
     var that=this;
     wx.request({
