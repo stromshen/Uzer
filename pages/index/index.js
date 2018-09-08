@@ -15,10 +15,6 @@ Page({
     duration: 1000, //  滑动动画时长1s
     a: '#FFEFD5',
     active: '#FF8C00',
-    motto: 'Hello World',
-    userInfo: {},
-    hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo'),
     xingxing:[
       '../../images/nav/xing.png',
       '../../images/nav/xing.png',
